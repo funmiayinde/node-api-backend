@@ -1,0 +1,11 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = clearTerminal;
+function clearTerminal() {
+  process.stdout.write('\u001B[2J\u001B[0;0f');
+}
+module.exports = exports['default'];
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9mb3JtYXR0ZXJzL2hlbHBlcnMvY2xlYXItdGVybWluYWwuanMiXSwibmFtZXMiOlsiY2xlYXJUZXJtaW5hbCIsInByb2Nlc3MiLCJzdGRvdXQiLCJ3cml0ZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7a0JBQXdCQSxhO0FBQVQsU0FBU0EsYUFBVCxHQUF5QjtBQUN0Q0MsVUFBUUMsTUFBUixDQUFlQyxLQUFmLENBQXFCLHNCQUFyQjtBQUNEIiwiZmlsZSI6ImNsZWFyLXRlcm1pbmFsLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gY2xlYXJUZXJtaW5hbCgpIHtcbiAgcHJvY2Vzcy5zdGRvdXQud3JpdGUoJ1xcdTAwMUJbMkpcXHUwMDFCWzA7MGYnKTtcbn1cbiJdfQ==

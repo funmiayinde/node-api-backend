@@ -1,0 +1,26 @@
+{
+  "name": "Hackerbay",
+  "scripts": {
+  },
+  "env": {
+    "BASE_URL": {
+      "required": true
+    },
+    "DB_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

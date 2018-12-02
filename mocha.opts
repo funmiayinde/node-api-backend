@@ -1,0 +1,5 @@
+--exit
+--require babel-register
+--require env-test
+--timeout 50000
+--bail
