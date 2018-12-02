@@ -15,6 +15,7 @@ Api web service for HackerBay Test
 - Change into the directory `cd node-api-backend`
 - Install all required dependencies with `npm install`
 - Start the application with `npm run dev`
+- Build the application with `npm run build`
 - You can seed with `{BASE_URL}/seeds/setups` 
 
 ### Testing
