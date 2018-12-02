@@ -27,8 +27,6 @@ export const upload = (file) => {
 	});
 	return new Q.Promise((resolve, reject) => {
 		cloudinary.v2.uploader.upload(file, {width: 50, height: 50}, (err, res) => {
-			console.log("helper cloundinary err:", err);
-			console.log("helper cloundinary result:", res);
 			if (err) {
 				reject(err);
 			} else {

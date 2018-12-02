@@ -23,7 +23,6 @@ const UserModel = new BaseSchema({
 
 UserModel.pre('save', function (next) {
 	const user = this;
-	console.log("user:", user);
 	if (!user.isModified('password'))
 		return next();
 	user.password = bcypt.hashSync(user.password);

@@ -39,12 +39,9 @@ class AuthController extends BaseController {
 		// }
 		try {
 			const user = await this.model.findOne({email: obj.email}).select("+password");
-			console.log("user:", user);
 			// const loginError = UserProcessor.userCanLogin(user, obj);
 			const comPassword = user.comparePassword(obj.password);
-			console.log('comPassword:', comPassword);
 			if (!comPassword) {
-				console.log('login error:', comPassword);
 				// throw loginError;
 			}
 			const meta = AppResponse.getSuccess();
@@ -54,7 +51,6 @@ class AuthController extends BaseController {
 			return res.status(HTTP_OK).json(response);
 		} catch (e) {
 			AppLogger.logger("error").error(e);
-			console.log("error:", e);
 			return next(e);
 		}
 	}

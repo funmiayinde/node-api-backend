@@ -44,7 +44,6 @@ class AppController extends BaseController {
 			return res.status(HTTP_CREATED).json(response);
 		} catch (e) {
 			AppLogger.logger("error").error("err: " + e);
-			console.log("error:", e);
 		}
 	}
 }

@@ -14,12 +14,9 @@ export const excluded = [
 
 export default (req, res, next) => {
 	const currentUrlPath = req.originalUrl.split('?')[0];
-	console.log("current url path:", currentUrlPath);
 	const filtered = _.filter(excluded, (item) => {
 		// const regex = new RegExp(`^/api/v[1-9]/[a-zA-Z]{2}/${item.route}$`);
 		const regex = new RegExp(`${config.get('api.prefix')}${item.route}$`);
-		console.log(regex.test(currentUrlPath));
-		console.log("req method:" + req.method.toLowerCase());
 		return regex.test(currentUrlPath) && req.method.toLowerCase() === item.method;
 	});
 

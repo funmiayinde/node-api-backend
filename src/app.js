@@ -30,8 +30,6 @@ export default mongooseConfig(config)
 		AppLogger.logger('info').info(`Application listening on ${config.get('app.baseUrl')}, Environment => ${config.util.getEnv('NODE_ENV')}`);
 		return Q.resolve([server.listen(config.get('app.port')), app]);
 	}, err => {
-		console.log('There was an un catch error : ');
-		console.error(err);
 		AppLogger.logger('error').error('There was an uncatch error');
 		AppLogger.logger('error').error(err);
 	});

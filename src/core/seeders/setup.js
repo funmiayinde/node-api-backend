@@ -35,7 +35,6 @@ export default class SetUpSeeders {
 
 		} catch (e) {
 			AppLogger.logger('error').error(e);
-			console.log("setup error:", e);
 		}
 	}
 }

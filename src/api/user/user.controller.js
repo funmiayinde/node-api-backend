@@ -46,7 +46,6 @@ class UserController extends AppController {
 		const file = req.file.path;
 		upload(file).then(result => {
 			try {
-				console.log("cloundinary result:", result);
 				const meta = AppResponse.getSuccess();
 				// meta.message = this.lang.file;
 				meta.message = 'Successfully Uploaded';
@@ -56,7 +55,6 @@ class UserController extends AppController {
 			}
 		}).catch(err => {
 			if (err) {
-				console.log("cloundinary: " + err);
 				const error = new AppError(lang.get("error").upload_error, HTTP_INTERNAL_SERVER_ERROR);
 				return next(error);
 			}

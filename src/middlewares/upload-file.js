@@ -24,7 +24,6 @@ class UploadFile {
 		return multer({
 			storage: multer.diskStorage({
 				destination: function (req, file, cb) {
-					console.log("folder:", this.folder);
 					// cb(null, this.folder);
 					cb(null, './uploads/');
 				},

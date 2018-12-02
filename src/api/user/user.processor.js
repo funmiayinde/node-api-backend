@@ -15,8 +15,6 @@ export class UserProcessor {
 	 * @return {Object} return the api error if user cannot verified
 	 */
 	static async userCanLogin(user, object) {
-		console.log('user in userLogin:', user);
-		console.log('user in object:', object);
 		if (!user) {
 			return new AppError(lang.get("auth").auth_failed, HTTP_NOT_FOUND);
 		}
