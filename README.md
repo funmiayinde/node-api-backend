@@ -12,7 +12,7 @@ Api web service for HackerBay Test
 
 ### Getting Started
 - Clone the repository `git clone https://github.com/funmiayinde/node-api-backend.git`
-- Change into the directory `cd hacker-bay-backend`
+- Change into the directory `cd node-api-backend`
 - Install all required dependencies with `npm install`
 - Start the application with `npm run dev`
 - You can seed with `{BASE_URL}/seeds/setups` 

@@ -1,53 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3cd598d-8770-4eb4-a888-7ea2bb86a981" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/default.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/production.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/user/user.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/user/user.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/user/user.processor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/user/user.route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/user/user.validation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/api/app.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/api/app.processor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/api/base.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/api/base.validation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/seeders/setup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lang/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lang/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lang/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/middlewares/app/auth-token.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/middlewares/app/error-handler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/middlewares/upload-file.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/setup/api-version.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/setup/express.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/setup/middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/setup/mongoose.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/babel-register/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/babel-register/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/uuid/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/api-validator-rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/api/api-validator-rules.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/app.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/app.error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/api/app.error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/app.logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/api/app.logger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/app.processor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/app.response.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/api/app.response.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/base.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/api/base.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/base.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/base.validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth/auth.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/query.parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/api/query.parser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/request-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request-methods.js" afterDir="false" />
-    </list>
+    <list default="true" id="b3cd598d-8770-4eb4-a888-7ea2bb86a981" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -138,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/api/user/user.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="86" column="45" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
+            <state relative-caret-position="1204">
+              <caret line="83" column="31" lean-forward="true" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -466,16 +420,15 @@
       <workItem from="1543496075962" duration="489000" />
       <workItem from="1543500973556" duration="691000" />
       <workItem from="1543525516507" duration="40008000" />
-      <workItem from="1543663654193" duration="43033000" />
+      <workItem from="1543663654193" duration="43282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88890000" />
+    <option name="totallyTimeSpent" value="89139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -904,8 +857,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/user/user.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="86" column="45" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
+        <state relative-caret-position="1204">
+          <caret line="83" column="31" lean-forward="true" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
