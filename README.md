@@ -1,7 +1,7 @@
 # WEB SERVICE
 
 ## Description
-Api web service for HackerBay Test
+Api web service written in Node and Mongo
 
 ## Local Setup
 

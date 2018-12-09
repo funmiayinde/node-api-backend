@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import config from 'config';
 import cloudinary from 'cloudinary';
 import Q from 'q';
-import fastJsonPath from 'fast-json-patch';
+import { applyPatch, applyOperation } from 'fast-json-patch';
 import _ from 'lodash';
 import Joi from 'joi';
 import AppLogger from "../core/api/app.logger";
@@ -47,13 +47,14 @@ export const validate = (obj, schema, patch) => {
 	for (let i = 0; i < patch.length; i++) {
 		let p = patch[i];
 
+		console.log('p', p);
 		// keep a copy before this round of patching so
 		// we can clean and compare it later
-		let cleanUnpatchObj = cleanObj(_.cloneDeep(iterationObj));
-		fastJsonPath.apply(iterationObj, [p]);
+		let cleanUnpatchObj = cleanObj(_.cloneDeep(iterationObj), schema);
+		applyOperation(iterationObj, [p]);
 
 		// clean a copy of the iterationObj
-		let cleanPatchObj = cleanObj(_.cloneDeep(iterationObj));
+		let cleanPatchObj = cleanObj(_.cloneDeep(iterationObj), schema);
 
 		/*
 		* Now patch the object that was:
@@ -92,6 +93,8 @@ export const validate = (obj, schema, patch) => {
  **/
 function cleanObj(obj, schema) {
 	// remove protected fields from provided object
+	console.log("clean obj", obj);
+	// console.log("clean schema", schema);
 	return Joi.validate(obj, schema).value;
 }
 

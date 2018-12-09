@@ -14,4 +14,6 @@ router.post("/users/upload", new UploadFile({
 	folder: './uploads'
 }).init(), userCtrl.uploadImage);
 
+router.post('/users/patch/json', userCtrl.jsonPatch);
+
 export default router;

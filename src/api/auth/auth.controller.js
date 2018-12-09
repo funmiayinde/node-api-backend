@@ -2,7 +2,7 @@
 
 import BaseController from '../../core/api/base.controller';
 import AppError from '../../core/api/app.error';
-import {HTTP_CREATED, HTTP_OK} from '../../utils/status-codes';
+import {HTTP_BAD_REQUEST, HTTP_CREATED, HTTP_OK} from '../../utils/status-codes';
 import AppProcessor from '../../core/api/app.processor';
 import lang from '../../lang';
 import AppLogger from '../../core/api/app.logger';
@@ -33,17 +33,14 @@ class AuthController extends BaseController {
 	 **/
 	async login(req, res, next) {
 		const obj = await AppProcessor.prepareBodyObject(req);
-		// const validate = AppProcessor.validate(this.model, "login", obj, lang.get("error").inputs);
-		// if (validate instanceof AppError) {
-		// 	return next(validate);
-		// }
 		try {
 			const user = await this.model.findOne({email: obj.email}).select("+password");
-			// const loginError = UserProcessor.userCanLogin(user, obj);
 			const comPassword = user.comparePassword(obj.password);
 			if (!comPassword) {
-				// throw loginError;
+				const error = new AppError(lang.get('auth').wrong_password,HTTP_BAD_REQUEST);
+				return next(error);
 			}
+
 			const meta = AppResponse.getSuccess();
 			meta.token = signToken({userId: user._id});
 			user.password = undefined;

@@ -47,4 +47,4 @@ UserModel.static.validations = (type, body) => {
 };
 
 export default mongoose.model('User', UserModel, 'user');
-
+export const User = mongoose.model('User', UserModel, 'user');

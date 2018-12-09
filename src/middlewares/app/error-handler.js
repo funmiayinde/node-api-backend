@@ -33,7 +33,8 @@ export default (error, req, res, next) => {
 	}
 
 	if (`${config.util.getEnv('NODE_ENV')}` !== 'production') {
-		AppLogger.logger('error').error(">>>>>>>>>>: " + error.message);
+		// console.log('error:', error);
+		AppLogger.logger('error').error(">>>>>>>>>>: " + error);
 	}
 	return res.status(meta.status_code).json(AppResponse.format(meta));
 };

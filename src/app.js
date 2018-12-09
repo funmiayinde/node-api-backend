@@ -8,7 +8,9 @@ import expressConfig from './setup/express';
 import AppLogger from "./core/api/app.logger";
 import middlewareConfig from './setup/middleware';
 
-
+/**
+ * @author funmiayinde
+ **/
 export default mongooseConfig(config)
 	.then(() => {
 		return apiVerison(config);
@@ -27,8 +29,11 @@ export default mongooseConfig(config)
 		return Q.all([http.createServer(app), app]);
 	})
 	.spread((server, app) => {
+		return Q.all([server.listen(config.get('app.port')), app]);
+	})
+	.spread((server, app) => {
 		AppLogger.logger('info').info(`Application listening on ${config.get('app.baseUrl')}, Environment => ${config.util.getEnv('NODE_ENV')}`);
-		return Q.resolve([server.listen(config.get('app.port')), app]);
+		return Q.resolve(app);
 	}, err => {
 		AppLogger.logger('error').error('There was an uncatch error');
 		AppLogger.logger('error').error(err);

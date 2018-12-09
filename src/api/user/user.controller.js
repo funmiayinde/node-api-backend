@@ -4,8 +4,9 @@ import AppError from "../../core/api/app.error";
 import lang from "../../lang";
 import {HTTP_BAD_REQUEST, HTTP_INTERNAL_SERVER_ERROR, HTTP_OK} from "../../utils/status-codes";
 import fs from 'fs';
-import {upload} from "../../utils/helper";
+import {upload, validate} from "../../utils/helper";
 import AppResponse from "../../core/api/app.response";
+import {applyPatch, applyOperation,applyReducer} from 'fast-json-patch';
 import Joi from 'joi';
 
 
@@ -67,22 +68,11 @@ class UserController extends AppController {
 	 * @param {callback} next The callback to handle the next program
 	 * @return {Object} res The response object
 	 **/
-	jsonPatch(req, res, next) {
-		let schema = Joi.object().keys({
-			id: Joi.string().strip().label('id'),
-			applicationId: Joi.string().strip().label('applicationId'),
-			name: Joi.string().required().label('name'),
-			description: Joi.string().optional().label('description'),
-			meta: Joi.object().optional().default({}).options({
-				allowUnknown: true
-			}).keys({
-				created: Joi.number().integer().strip().label('/meta/created')
-			}).label('meta')
-		}).options({
-			allowUnknown: false
-		}).label('patch object');
-
-		const obj = JSON.stringify(req.body);
+	async jsonPatch(req, res, next) {
+		let document = req.body.document;
+		let patch = req.body.patch;
+		document = applyPatch(document, patch).newDocument;
+		return res.json({document: document});
 	}
 }
 

@@ -13,7 +13,7 @@
     "clean": "rimraf dist",
     "build": "npm run clean && mkdir dist && babel src -s -d dist",
     "test": "mocha --opts ./mocha.opts __test__/**/*/*.spec.js",
-    "test:current": "mocha --opts ./mocha.opts __test__/e2e/**/google.spec.js",
+	"test:coverage": "istanbul cover __test__/**/*/*.spec.js",
     "lint": "esw src"
   },
   "dependencies": {
@@ -36,7 +36,7 @@
     "express-fileupload": "^1.0.0",
     "express-upload": "^0.1.0",
     "faker": "^4.1.0",
-    "fast-json-patch": "^2.0.7",
+    "fast-json-patch": "^2.0.4",
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "joi": "^14.3.0",
