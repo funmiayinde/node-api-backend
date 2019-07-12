@@ -41,7 +41,7 @@
     "http": "0.0.0",
     "joi": "^14.3.0",
     "jsonwebtoken": "^8.4.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "mkdirp": "^0.5.1",
     "mongoose": "^5.3.14",
     "mongoose-hidden": "^1.6.0",
