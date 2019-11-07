@@ -10,7 +10,7 @@ class UploadFile {
 	 * @constructor
 	 * @param {Object} options The Object options
 	 **/
-	constructor(options = {type: 'media', size: 1, folder: 'media', limit: 1000000}) {
+	constructor(options = {type: 'media', size: 1, folder: 'media', limit: 100000000}) {
 		this.type = options.type;
 		this.size = options.size;
 		this.folder = options.folder;
@@ -42,10 +42,10 @@ class UploadFile {
 	 * @function
 	 * */
 	init() {
-		let middlware = this.getMulter().single(this.type);
-		if (this.size > 1) {
-			middlware = this.getMulter().array(this.type, this.size);
-		}
+		let middlware = this.getMulter().array(this.type, this.size);
+		// if (this.size > 1) {
+		// 	middlware = this.getMulter().array(this.type, this.size);
+		// }
 		return middlware;
 	}
 }

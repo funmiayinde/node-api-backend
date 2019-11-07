@@ -1,20 +1,18 @@
+/* eslint-disable valid-jsdoc */
 import _ from 'underscore';
 import AppController from '../../core/api/app.controller';
-import AppError from "../../core/api/app.error";
-import lang from "../../lang";
-import {HTTP_BAD_REQUEST, HTTP_INTERNAL_SERVER_ERROR, HTTP_OK} from "../../utils/status-codes";
+import AppError from '../../core/api/app.error';
+import lang from '../../lang';
+import {HTTP_BAD_REQUEST, HTTP_INTERNAL_SERVER_ERROR, HTTP_OK} from '../../utils/status-codes';
 import fs from 'fs';
-import {upload, validate} from "../../utils/helper";
-import AppResponse from "../../core/api/app.response";
-import {applyPatch, applyOperation,applyReducer} from 'fast-json-patch';
-import Joi from 'joi';
-
+import {upload, validate} from '../../utils/helper';
+import AppResponse from '../../core/api/app.response';
+import {applyPatch, applyOperation, applyReducer} from 'fast-json-patch';
 
 /**
  * The User controller which extends AppController
  **/
 class UserController extends AppController {
-
 	/**
 	 * @param {Model} name The name property is inherited
 	 * from parent
@@ -30,7 +28,7 @@ class UserController extends AppController {
 	 * @return {Object} res The res Object
 	 * */
 	create(req, res, next) {
-		throw new Error("Operation failed!");
+		throw new Error('Operation failed!');
 	}
 
 	/**
@@ -40,26 +38,28 @@ class UserController extends AppController {
 	 * @return {Object} res The response object
 	 **/
 	async uploadImage(req, res, next) {
-		if (!req.file || _.isEmpty(req.file)) {
+		if (!req.files || _.isEmpty(req.files)) {
 			const error = new AppError(lang.get('file').no_file_to_upload, HTTP_BAD_REQUEST);
 			return next(error);
 		}
-		const file = req.file.path;
-		upload(file).then(result => {
-			try {
-				const meta = AppResponse.getSuccess();
-				// meta.message = this.lang.file;
-				meta.message = 'Successfully Uploaded';
-				return res.status(HTTP_OK).json(AppResponse.format(meta, {image_url: result.url}));
-			} catch (e) {
-				return next(e);
+		const files = req.files;
+		// console.log('files:', files);
+		try {
+			let urls = [];
+			// eslint-disable-next-line require-jsdoc
+			let multiple = async (path) => await upload(path);
+			for (const file of files) {
+				const {path} = file;
+				const newPath = await multiple(path);
+				urls.push(newPath);
+				fs.unlinkSync(path);
 			}
-		}).catch(err => {
-			if (err) {
-				const error = new AppError(lang.get("error").upload_error, HTTP_INTERNAL_SERVER_ERROR);
-				return next(error);
-			}
-		});
+			const meta = AppResponse.getSuccess();
+			return res.status(HTTP_OK).json(AppResponse.format(meta, {image_url: urls}));
+		} catch (e) {
+			console.log('err >>>:', e);
+			return next(e);
+		}
 	}
 
 	/**

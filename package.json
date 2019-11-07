@@ -13,7 +13,7 @@
     "clean": "rimraf dist",
     "build": "npm run clean && mkdir dist && babel src -s -d dist",
     "test": "mocha --opts ./mocha.opts __test__/**/*/*.spec.js",
-	"test:coverage": "istanbul cover __test__/**/*/*.spec.js",
+    "test:coverage": "istanbul cover __test__/**/*/*.spec.js",
     "lint": "esw src"
   },
   "dependencies": {

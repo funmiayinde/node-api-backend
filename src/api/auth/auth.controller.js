@@ -33,6 +33,7 @@ class AuthController extends BaseController {
 	 **/
 	async login(req, res, next) {
 		const obj = await AppProcessor.prepareBodyObject(req);
+		console.log('req obj:', obj);
 		try {
 			const user = await this.model.findOne({email: obj.email}).select("+password");
 			const comPassword = user.comparePassword(obj.password);
