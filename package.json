@@ -43,7 +43,7 @@
     "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "mkdirp": "^0.5.1",
-    "mongoose": "^5.3.14",
+    "mongoose": "^5.7.5",
     "mongoose-hidden": "^1.6.0",
     "morgan": "^1.9.1",
     "multer": "^1.4.1",
